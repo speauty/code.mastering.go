@@ -29,8 +29,8 @@ func main() {
 	GetPointer(ptrJ)
 	fmt.Println("j value: ", j)
 
-	// 居然没被释放, 也是怪了, 毕竟returnPointer.v是局部变量
+	// 居然没被释放, 也是怪了, 毕竟returnPointer.v是局部变量, 三色标记未理解透彻
 	k := returnPointer(12)
-	fmt.Println("k memory: ", k)
-	fmt.Println("k value: ", *k)
+	fmt.Println("k memory: ", k) // k memory:  0xc000022140
+	fmt.Println("k value: ", *k) // k value:  144
 }
